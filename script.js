@@ -10,22 +10,22 @@ let playerAP = 100;
 
 function onReady() {
     
-    $('.attack-btn arcane-scepter').on('click', function(){
+    $('.attack-btn.arcane-scepter').on('click', function(){
         fungusHP -= 14;
         playerAP -= 12;
         render();
     });
-    $('.attack-btn entangle').on('click', function(){
+    $('.attack-btn.entangle').on('click', function(){
         fungusHP -= 9;
         playerAP -= 23;
         render();
     });
-    $('.attack-btn dragon-blade').on('click', function(){
+    $('.attack-btn.dragon-blade').on('click', function(){
         fungusHP -= 47;
         playerAP -= 38;
         render();
     });
-    $('.attack-btn star-fire').on('click', function(){
+    $('.attack-btn.star-fire').on('click', function(){
         fungusHP -= 25;
         playerAP -= 33;
         render();
@@ -61,8 +61,17 @@ function onReady() {
 // }
 
 function render(){
-    $('.ap-text').text(playerAP);
-    $('.hp-text').text(fungusHP);
-    $('.attacks').$('#ap-meter').val(playerAP);
-    $('.enemy').$('#hp-meter').val(fungusHP);
+    if (playerAP < 0){
+        playerAP = 0};
+    $('#ap-span').text(playerAP);
+    // if (playerAP = 0){
+
+    // }
+    if (fungusHP < 0){
+        fungusHP = 0};
+    $('#hp-span').text(fungusHP);
+    // $('.ap-text').text(playerAP);
+    // $('.hp-text').text(fungusHP);
+    // $('.attacks').$('#ap-meter').text(playerAP);
+    // $('.enemy').$('#hp-meter').text(fungusHP);
 }
