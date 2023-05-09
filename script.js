@@ -62,13 +62,10 @@ function onReady() {
 
 function render(){
     if (playerAP < 0){
-        playerAP = 0};
+        playerAP = 0, $('.attack-btn').prop("disabled", true), $('#animeFungus').attr('class', 'freaky-fungus jump')};
     $('#ap-span').text(playerAP);
-    // if (playerAP = 0){
-
-    // }
     if (fungusHP < 0){
-        fungusHP = 0};
+        fungusHP = 0, $('#animeFungus').attr('class', 'freaky-fungus dead')};
     $('#hp-span').text(fungusHP);
     // $('.ap-text').text(playerAP);
     // $('.hp-text').text(fungusHP);
